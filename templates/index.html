@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BigFour Classifier</title>
+        <link rel='stylesheet' type="text/css" href='static\css\styles.css'>
+    </head>
+    <body>
+        <center>
+            <!-- Headings -->
+        <h1>Big Four Classifier 🐍</h1>
+
+        <!-- Paragraph -->
+        <p>
+            The four venomous snake species responsible for causing the greatest number of medically significant human snake bite cases on the Indian Subcontinent (mostly in India) are sometimes collectively referred to as the <b>Big Four</b>. 
+        </p>
+        
+        <!-- Lists -->
+        
+            <li>Common krait</li>
+            <li>Russell's viper</li>
+            <li>Indian saw-scaled viper</li>
+            <li>Indian cobra</li>
+        
+
+        <p>
+            Upload the picture of the snake to find what species it is!
+        </p>
+
+        <form method = POST enctype = multipart/form-data>
+            <input type=file name=image>
+            <input type=submit value=Predict>
+            <br>
+            {% if uploaded_img %}
+                <h3>Prediction: {{prediction}} </h3>
+                <img src= "static\{{ uploaded_img }}" width ='256' height="256">
+            {%endif%}
+            
+        </form>
+        </center>
+        
+    </body>
+</html>
